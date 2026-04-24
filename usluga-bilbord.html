@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Bilbordi & Reklamne Konstrukcije | Profi Art Metal</title>
+<meta name="description" content="Izrada bilbord konstrukcija, reklamnih nosača i čeličnih panoa po meri — Profi Art Metal. Projekt, proizvodnja i montaža."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<link rel="stylesheet" href="style.css"/>
+<script src="script.js" defer></script>
+</head>
+<body>
+
+<!-- MOBILE MENU -->
+<div class="mobile-overlay" id="mobileOverlay">
+  <button class="mobile-close" onclick="closeMobile()">×</button>
+  <a href="index.html#about" onclick="closeMobile()">O Nama</a>
+  <a href="index.html#gallery" onclick="closeMobile()">Galerija</a>
+  <div class="m-dropdown" id="mDropdown">
+    <button class="m-dropdown-toggle" onclick="toggleMDrop(this)">
+      Usluge
+      <span class="m-drop-caret">+</span>
+    </button>
+    <div class="m-dropdown-list">
+      <a href="usluga-kapije.html" onclick="closeMobile()">Kapije</a>
+      <a href="usluga-ograde.html" onclick="closeMobile()">Ograde</a>
+      <a href="usluga-nadstresnice.html" onclick="closeMobile()">Nadstrešnice</a>
+      <a href="usluga-gelenderi.html" onclick="closeMobile()">Gelenderi</a>
+      <a href="usluga-stepenice.html" onclick="closeMobile()">Stepenice</a>
+      <a href="usluga-vrata.html" onclick="closeMobile()">Vrata & Rešetke</a>
+      <a href="usluga-tende.html" onclick="closeMobile()">Tende</a>
+      <a href="usluga-bilbord.html" onclick="closeMobile()">Bilbordi</a>
+    </div>
+  </div>
+  <a href="index.html#projects" onclick="closeMobile()">Projekti</a>
+  <a href="index.html#contact" onclick="closeMobile()">Kontakt</a>
+</div>
+
+<!-- LIGHTBOX -->
+<div id="lightbox" onclick="closeLightbox(event)">
+  <div class="lb-img-wrap">
+    <img id="lbImg" src="" alt=""/>
+    <button class="lb-close" onclick="closeLightboxBtn()">×</button>
+    <button class="lb-prev" onclick="lbNav(-1)">&#8592;</button>
+    <button class="lb-next" onclick="lbNav(1)">&#8594;</button>
+    <div class="lb-info" id="lbInfo"></div>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav id="nav" class="scrolled">
+  <a class="nav-logo" href="index.html">
+    <img src="logo.png" alt="Profi Art" class="nav-logo-img"/>
+    PROFI <em>ART</em>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html#about">O Nama</a></li>
+    <li><a href="index.html#gallery">Galerija</a></li>
+    <li class="has-dropdown">
+      <a href="index.html#services">Usluge <span class="drop-caret">▾</span></a>
+      <div class="dropdown-wrap">
+        <ul class="dropdown">
+          <li><a href="usluga-kapije.html">Kapije</a></li>
+          <li><a href="usluga-ograde.html">Ograde</a></li>
+          <li><a href="usluga-nadstresnice.html">Nadstrešnice</a></li>
+          <li><a href="usluga-gelenderi.html">Gelenderi</a></li>
+          <li><a href="usluga-stepenice.html">Stepenice</a></li>
+          <li><a href="usluga-vrata.html">Vrata & Rešetke</a></li>
+          <li><a href="usluga-tende.html">Tende & Posebne</a></li>
+          <li><a href="usluga-bilbord.html">Bilbordi</a></li>
+        </ul>
+      </div>
+    </li>
+    <li><a href="index.html#projects">Projekti</a></li>
+    <li><a href="index.html#contact">Kontakt</a></li>
+  </ul>
+  <a href="https://www.instagram.com/profiartmetal/" target="_blank" class="nav-book">Instagram</a>
+  <button class="hamburger" onclick="toggleMobile()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- SERVICE HERO -->
+<section class="srv-page-hero">
+  <img src="Bilbordi/bilbord-1.jpg" alt="Bilbord konstrukcija Profi Art Metal" class="hero-bg"/>
+  <div class="srv-hero-tint"></div>
+  <div class="srv-hero-content">
+    <div class="srv-hero-crumb">
+      <a href="index.html">Početna</a>
+      <span class="sep"></span>
+      <span>Usluge</span>
+      <span class="sep"></span>
+      <span style="color:var(--gold-light)">Bilbordi</span>
+    </div>
+    <h1 class="srv-hero-h1">Bilbord <em>Konstrukcije</em></h1>
+    <p class="srv-hero-sub">Čvrste nosive konstrukcije za reklamne bilborde i panoe — projektovane da izdrže vetar, vreme i godine bez popuštanja.</p>
+    <div class="srv-hero-rule"></div>
+  </div>
+</section>
+
+<!-- BACK BAR -->
+<div class="back-link-bar">
+  <a href="index.html#services-preview" class="back-link">
+    <span class="arrow">←</span> Sve Usluge
+  </a>
+</div>
+
+<!-- INTRO -->
+<section class="srv-intro">
+  <div class="srv-intro-wrap">
+    <div class="srv-intro-text">
+      <p class="eyebrow fade-up">Šta Nudimo</p>
+      <h2 class="section-h fade-up">Reklama koja <em>Stoji Uspravno</em></h2>
+      <p class="fade-up">Bilbord konstrukcija nije samo nosač za platno — to je čelična struktura koja mora izdržati udare vetra, teret reklame i vremenske uslove godinama. Izrađujemo konstrukcije za gradske, autoputne i objekatske bilborde svih dimenzija, prilagođene terenu i vrsti reklame.</p>
+      <p class="fade-up">Svaki projekat počinjemo statičkom procenom i izradom tehničkog crteža. Koristimo čvrste čelične profile, zavrtnjeve, i sve elemente prolaze kroz antikorozivnu zaštitu. Montažu vršimo profesionalnom opremom — brzo, bezbedno i bez ostataka.</p>
+      <div class="srv-bilbord-note fade-up">
+        <strong>Napomena:</strong> radimo samostojeće bilborde, zidne panoe, osvetljene kasete i konstrukcije za reklame na objektima. Imamo iskustvo sa dimenzijama od 2×1m do preko 10m visine.
+      </div>
+      <ul class="srv-features fade-up">
+        <li>Samostojeće bilborde</li>
+        <li>Zidne i fasadne reklame</li>
+        <li>Osvetljene kasete i nosači</li>
+        <li>Pocinkovana i obojena čelična konstrukcija</li>
+        <li>Projektovanje i statička provera</li>
+        <li>Profesionalna montaža</li>
+      </ul>
+    </div>
+    <div class="srv-intro-visual fade-up">
+      <img src="Bilbordi/bilbord-2.jpg" alt="Bilbord — detalj konstrukcije" class="srv-intro-img"/>
+      <div class="srv-intro-accent"></div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="srv-gallery-sec">
+  <div class="srv-gallery-top">
+    <div>
+      <p class="eyebrow fade-up">Galerija Bilborda</p>
+      <h2 class="section-h fade-up">Pogledajte <em>Naš Rad</em></h2>
+    </div>
+    <div class="srv-gallery-hint fade-up">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+      Kliknite na sliku za uvećani prikaz
+    </div>
+  </div>
+  <div class="srv-gallery-grid">
+    <div class="sg-item sg-wide" data-src="Bilbordi/bilbord-1.jpg" data-caption="Bilbord konstrukcija — pogled sa strane">
+      <img src="Bilbordi/bilbord-1.jpg" alt="Bilbord konstrukcija"/>
+      <div class="sg-item-overlay"><div class="sg-item-label">Bilbord — Pogled</div></div>
+      <div class="sg-item-zoom"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="8" y1="11" x2="14" y2="11"/><line x1="11" y1="8" x2="11" y2="14"/></svg></div>
+    </div>
+    <div class="sg-item" data-src="Bilbordi/bilbord-2.jpg" data-caption="Čelična konstrukcija — detalj spoja">
+      <img src="Bilbordi/bilbord-2.jpg" alt="Bilbord detalj"/>
+      <div class="sg-item-overlay"><div class="sg-item-label">Detalj Spoja</div></div>
+      <div class="sg-item-zoom"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="8" y1="11" x2="14" y2="11"/><line x1="11" y1="8" x2="11" y2="14"/></svg></div>
+    </div>
+    <div class="sg-item" data-src="Bilbordi/bilbord-3.jpg" data-caption="Bilbord — stub i ram">
+      <img src="Bilbordi/bilbord-3.jpg" alt="Bilbord stub"/>
+      <div class="sg-item-overlay"><div class="sg-item-label">Stub i Ram</div></div>
+      <div class="sg-item-zoom"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="8" y1="11" x2="14" y2="11"/><line x1="11" y1="8" x2="11" y2="14"/></svg></div>
+    </div>
+    <div class="sg-item sg-wide" data-src="Bilbordi/bilbord-4.jpg" data-caption="Bilbord montaža — kompletan rad">
+      <img src="Bilbordi/bilbord-4.jpg" alt="Bilbord montaža"/>
+      <div class="sg-item-overlay"><div class="sg-item-label">Komplet — Montaža</div></div>
+      <div class="sg-item-zoom"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="8" y1="11" x2="14" y2="11"/><line x1="11" y1="8" x2="11" y2="14"/></svg></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="srv-cta">
+  <p class="srv-cta-eyebrow">Spremni za Vaš Projekat?</p>
+  <h2>Pošaljite Nam <em>Vašu Ideju</em></h2>
+  <p>Konsultacije i procena su besplatne. Javite nam dimenzije i lokaciju — uradićemo vam ponudu u najkraćem roku.</p>
+  <div class="srv-cta-btns">
+    <a href="tel:+381643456789" class="btn-fill">Pozovite Odmah</a>
+    <a href="https://www.instagram.com/profiartmetal/" target="_blank" class="btn-ghost">Instagram DM</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="f-col">
+      <div class="f-brand-logo">
+        <img src="logo.png" alt="Profi Art" style="width:36px;height:36px;border-radius:50%;object-fit:cover;vertical-align:middle;margin-right:10px;"/>
+        PROFI <em>ART</em>
+      </div>
+      <p class="f-desc">Specijalizovana kompanija za metalne konstrukcije po meri. Kapije, ograde, nadstrešnice, gelenderi i još mnogo toga — za celu Srbiju.</p>
+      <div class="f-socials">
+        <a href="https://www.instagram.com/profiartmetal/" target="_blank" class="f-soc" aria-label="Instagram">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="f-col">
+      <div class="f-col-title">Navigacija</div>
+      <ul class="f-links">
+        <li><a href="index.html#about">O Nama</a></li>
+        <li><a href="index.html#gallery">Galerija</a></li>
+        <li><a href="index.html#services-preview">Usluge</a></li>
+        <li><a href="index.html#projects">Projekti</a></li>
+        <li><a href="index.html#contact">Kontakt</a></li>
+      </ul>
+    </div>
+    <div class="f-col">
+      <div class="f-col-title">Usluge</div>
+      <ul class="f-links">
+        <li><a href="usluga-kapije.html">Kapije</a></li>
+        <li><a href="usluga-ograde.html">Ograde</a></li>
+        <li><a href="usluga-nadstresnice.html">Nadstrešnice</a></li>
+        <li><a href="usluga-gelenderi.html">Gelenderi</a></li>
+        <li><a href="usluga-stepenice.html">Stepenice</a></li>
+        <li><a href="usluga-vrata.html">Vrata & Rešetke</a></li>
+        <li><a href="usluga-bilbord.html">Bilbordi</a></li>
+      </ul>
+    </div>
+    <div class="f-col">
+      <div class="f-col-title">Kontakt</div>
+      <ul class="f-links">
+        <li><a href="tel:+381643456789">+381 64 345-6789</a></li>
+        <li><a href="https://www.instagram.com/profiartmetal/" target="_blank">@profiartmetal</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div>© 2025 Profi Art Metal. Sva prava zadržana.</div>
+    <div style="opacity:0.4;letter-spacing:2px;font-size:10px;">NIS · SRBIJA</div>
+  </div>
+</footer>
+
+</body>
+</html>

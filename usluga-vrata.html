@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Vrata & Rešetke po Meri | Profi Art Metal</title>
+<meta name="description" content="Garažna vrata, sigurnosne rešetke i protivprovalne konstrukcije po meri — Profi Art Metal. Sve mere, svi oblici, praškasto bojenje."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<link rel="stylesheet" href="style.css"/>
+<script src="script.js" defer></script>
+</head>
+<body>
+
+<!-- MOBILE MENU -->
+<div class="mobile-overlay" id="mobileOverlay">
+  <button class="mobile-close" onclick="closeMobile()">×</button>
+  <a href="index.html#about" onclick="closeMobile()">O Nama</a>
+  <a href="index.html#gallery" onclick="closeMobile()">Galerija</a>
+  <div class="m-dropdown" id="mDropdown">
+    <button class="m-dropdown-toggle" onclick="toggleMDrop(this)">
+      Usluge
+      <span class="m-drop-caret">+</span>
+    </button>
+    <div class="m-dropdown-list">
+      <a href="usluga-kapije.html" onclick="closeMobile()">Kapije</a>
+      <a href="usluga-ograde.html" onclick="closeMobile()">Ograde</a>
+      <a href="usluga-nadstresnice.html" onclick="closeMobile()">Nadstrešnice</a>
+      <a href="usluga-gelenderi.html" onclick="closeMobile()">Gelenderi</a>
+      <a href="usluga-stepenice.html" onclick="closeMobile()">Stepenice</a>
+      <a href="usluga-vrata.html" onclick="closeMobile()">Vrata & Rešetke</a>
+      <a href="usluga-tende.html" onclick="closeMobile()">Tende</a>
+      <a href="usluga-bilbord.html" onclick="closeMobile()">Bilbordi</a>
+    </div>
+  </div>
+  <a href="index.html#projects" onclick="closeMobile()">Projekti</a>
+  <a href="index.html#contact" onclick="closeMobile()">Kontakt</a>
+</div>
+
+<!-- LIGHTBOX -->
+<div id="lightbox" onclick="closeLightbox(event)">
+  <div class="lb-img-wrap">
+    <img id="lbImg" src="" alt=""/>
+    <button class="lb-close" onclick="closeLightboxBtn()">×</button>
+    <button class="lb-prev" onclick="lbNav(-1)">&#8592;</button>
+    <button class="lb-next" onclick="lbNav(1)">&#8594;</button>
+    <div class="lb-info" id="lbInfo"></div>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav id="nav" class="scrolled">
+  <a class="nav-logo" href="index.html">
+    <img src="logo.png" alt="Profi Art" class="nav-logo-img"/>
+    PROFI <em>ART</em>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html#about">O Nama</a></li>
+    <li><a href="index.html#gallery">Galerija</a></li>
+    <li class="has-dropdown">
+      <a href="index.html#services">Usluge <span class="drop-caret">▾</span></a>
+      <div class="dropdown-wrap">
+        <ul class="dropdown">
+          <li><a href="usluga-kapije.html">Kapije</a></li>
+          <li><a href="usluga-ograde.html">Ograde</a></li>
+          <li><a href="usluga-nadstresnice.html">Nadstrešnice</a></li>
+          <li><a href="usluga-gelenderi.html">Gelenderi</a></li>
+          <li><a href="usluga-stepenice.html">Stepenice</a></li>
+          <li><a href="usluga-vrata.html">Vrata & Rešetke</a></li>
+          <li><a href="usluga-tende.html">Tende & Posebne</a></li>
+          <li><a href="usluga-bilbord.html">Bilbordi</a></li>
+        </ul>
+      </div>
+    </li>
+    <li><a href="index.html#projects">Projekti</a></li>
+    <li><a href="index.html#contact">Kontakt</a></li>
+  </ul>
+  <a href="https://www.instagram.com/profiartmetal/" target="_blank" class="nav-book">Instagram</a>
+  <button class="hamburger" onclick="toggleMobile()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- SERVICE HERO -->
+<section class="srv-page-hero">
+  <img src="p1.jpg" alt="Vrata i rešetke po meri" class="hero-bg"/>
+  <div class="srv-hero-tint"></div>
+  <div class="srv-hero-content">
+    <div class="srv-hero-crumb">
+      <a href="index.html">Početna</a>
+      <span class="sep"></span>
+      <span>Usluge</span>
+      <span class="sep"></span>
+      <span style="color:var(--gold-light)">Vrata & Rešetke</span>
+    </div>
+    <h1 class="srv-hero-h1">Vrata & <em>Rešetke</em></h1>
+    <p class="srv-hero-sub">Garažna vrata, sigurnosne rešetke i protivprovalne konstrukcije po meri — snažne, precizne i diskretno uklopljene u izgled vašeg objekta.</p>
+    <div class="srv-hero-rule"></div>
+  </div>
+</section>
+
+<!-- BACK BAR -->
+<div class="back-link-bar">
+  <a href="index.html#services-preview" class="back-link">
+    <span class="arrow">←</span> Sve Usluge
+  </a>
+</div>
+
+<!-- INTRO -->
+<section class="srv-intro">
+  <div class="srv-intro-wrap">
+    <div class="srv-intro-text">
+      <p class="eyebrow fade-up">Šta Nudimo</p>
+      <h2 class="section-h fade-up">Sigurnost bez <em>Kompromisa</em></h2>
+      <p class="fade-up">Vrata i rešetke su linija odbrane vašeg prostora — i tu nema mesta za improvizaciju. Izrađujemo garažna i pomoćna vrata, protivprovalne rešetke za prozore, podrumska vrata i sve tipove zaštitnih konstrukcija po tačnim merama vašeg objekta.</p>
+      <p class="fade-up">Svaki komad je pravljen od čvrstog materijala, sa preciznom bravom i šarkama koje traju godinama. Radimo klasične sigurnosne rešetke, kao i moderne dizajnerske varijante koje se lepo uklapaju u fasadu. Sve konstrukcije prolaze kroz antikorozivnu zaštitu i praškasto bojenje.</p>
+      <ul class="srv-features fade-up">
+        <li>Garažna vrata — krilna i klizna</li>
+        <li>Sigurnosne rešetke za prozore</li>
+        <li>Protivprovalna ulazna vrata</li>
+        <li>Podrumska i pomoćna vrata</li>
+        <li>Kvalitetne brave i okovi</li>
+        <li>Praškasto bojenje u boji po izboru</li>
+      </ul>
+    </div>
+    <div class="srv-intro-visual fade-up">
+      <div class="srv-intro-img" style="display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,var(--sand) 0%,var(--warm-white) 100%);color:var(--warm-grey);flex-direction:column;gap:16px;border:1px solid rgba(200,131,42,0.22)">
+        <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" style="color:var(--gold);opacity:0.8"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:32px;font-style:italic;color:var(--ink);font-weight:300">Uskoro</div>
+        <div style="font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--stone)">Radovi u pripremi</div>
+      </div>
+      <div class="srv-intro-accent"></div>
+    </div>
+  </div>
+</section>
+
+<!-- COMING SOON -->
+<section class="srv-coming">
+  <div class="srv-coming-wrap">
+    <p class="srv-coming-eyebrow fade-up">Galerija u Pripremi</p>
+    <h2 class="fade-up">Uskoro dodajemo <em>nove radove</em></h2>
+    <p class="fade-up">Fotografije naših vrata i sigurnosnih rešetki upravo pripremamo za objavu. Radovi su tu — samo nam treba još malo vremena da profesionalno dokumentujemo svaki projekat i okačimo ga na sajt.</p>
+    <p class="fade-up">Ako želite da vidite konkretne primere uživo ili fotografije sa terena — pozovite nas, rado ćemo vam poslati reference i pričati o dostupnim modelima.</p>
+    <div class="srv-coming-badge fade-up">
+      <span class="dot"></span>
+      Fotografije stižu uskoro
+    </div>
+  </div>
+</section>
+
+<!-- OTHER WORKS TEASER -->
+<section class="srv-gallery-sec srv-other">
+  <div class="srv-gallery-top">
+    <div>
+      <p class="eyebrow fade-up">U međuvremenu</p>
+      <h2 class="section-h fade-up">Pogledajte <em>Ostale Radove</em></h2>
+    </div>
+    <div class="srv-gallery-hint fade-up">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+      Iz naše opšte galerije — ostali radovi
+    </div>
+  </div>
+  <div class="srv-gallery-grid">
+    <div class="sg-item sg-wide" data-src="p1.jpg" data-caption="Ornamentalna kapija — detalj">
+      <img src="p1.jpg" alt="Ornamentalna kapija"/>
+      <div class="sg-item-overlay"><div class="sg-item-label">Ornament — Kapija</div></div>
+      <div class="sg-item-zoom"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="8" y1="11" x2="14" y2="11"/><line x1="11" y1="8" x2="11" y2="14"/></svg></div>
+    </div>
+    <div class="sg-item" data-src="p3.jpg" data-caption="Pešačka kapija uz dvorišnu ogradu">
+      <img src="p3.jpg" alt="Pešačka kapija"/>
+      <div class="sg-item-overlay"><div class="sg-item-label">Pešačka Kapija</div></div>
+      <div class="sg-item-zoom"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="8" y1="11" x2="14" y2="11"/><line x1="11" y1="8" x2="11" y2="14"/></svg></div>
+    </div>
+    <div class="sg-item" data-src="hero.jpg" data-caption="Kapija i ograda — komplet">
+      <img src="hero.jpg" alt="Kapija i ograda"/>
+      <div class="sg-item-overlay"><div class="sg-item-label">Komplet Kapija + Ograda</div></div>
+      <div class="sg-item-zoom"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="8" y1="11" x2="14" y2="11"/><line x1="11" y1="8" x2="11" y2="14"/></svg></div>
+    </div>
+    <div class="sg-item" data-src="p6.jpg" data-caption="Čelične stepenice">
+      <img src="p6.jpg" alt="Čelične stepenice"/>
+      <div class="sg-item-overlay"><div class="sg-item-label">Čelične Stepenice</div></div>
+      <div class="sg-item-zoom"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="8" y1="11" x2="14" y2="11"/><line x1="11" y1="8" x2="11" y2="14"/></svg></div>
+    </div>
+    <div class="sg-item" data-src="p7.jpg" data-caption="Nadstrešnica — zakrivljena">
+      <img src="p7.jpg" alt="Nadstrešnica"/>
+      <div class="sg-item-overlay"><div class="sg-item-label">Nadstrešnica</div></div>
+      <div class="sg-item-zoom"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="8" y1="11" x2="14" y2="11"/><line x1="11" y1="8" x2="11" y2="14"/></svg></div>
+    </div>
+    <div class="sg-item sg-wide" data-src="p2.jpg" data-caption="Kapija — detalj izrade">
+      <img src="p2.jpg" alt="Kapija detalj"/>
+      <div class="sg-item-overlay"><div class="sg-item-label">Kapija — Detalj</div></div>
+      <div class="sg-item-zoom"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="8" y1="11" x2="14" y2="11"/><line x1="11" y1="8" x2="11" y2="14"/></svg></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="srv-cta">
+  <p class="srv-cta-eyebrow">Spremni za Vaš Projekat?</p>
+  <h2>Pošaljite Nam <em>Vašu Ideju</em></h2>
+  <p>Konsultacije i procena su besplatne. Javite nam mere i stil — uradićemo vam ponudu u najkraćem roku.</p>
+  <div class="srv-cta-btns">
+    <a href="tel:+381643456789" class="btn-fill">Pozovite Odmah</a>
+    <a href="https://www.instagram.com/profiartmetal/" target="_blank" class="btn-ghost">Instagram DM</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="f-col">
+      <div class="f-brand-logo">
+        <img src="logo.png" alt="Profi Art" style="width:36px;height:36px;border-radius:50%;object-fit:cover;vertical-align:middle;margin-right:10px;"/>
+        PROFI <em>ART</em>
+      </div>
+      <p class="f-desc">Specijalizovana kompanija za metalne konstrukcije po meri. Kapije, ograde, nadstrešnice, gelenderi i još mnogo toga — za celu Srbiju.</p>
+      <div class="f-socials">
+        <a href="https://www.instagram.com/profiartmetal/" target="_blank" class="f-soc" aria-label="Instagram">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="f-col">
+      <div class="f-col-title">Navigacija</div>
+      <ul class="f-links">
+        <li><a href="index.html#about">O Nama</a></li>
+        <li><a href="index.html#gallery">Galerija</a></li>
+        <li><a href="index.html#services-preview">Usluge</a></li>
+        <li><a href="index.html#projects">Projekti</a></li>
+        <li><a href="index.html#contact">Kontakt</a></li>
+      </ul>
+    </div>
+    <div class="f-col">
+      <div class="f-col-title">Usluge</div>
+      <ul class="f-links">
+        <li><a href="usluga-kapije.html">Kapije</a></li>
+        <li><a href="usluga-ograde.html">Ograde</a></li>
+        <li><a href="usluga-nadstresnice.html">Nadstrešnice</a></li>
+        <li><a href="usluga-gelenderi.html">Gelenderi</a></li>
+        <li><a href="usluga-stepenice.html">Stepenice</a></li>
+        <li><a href="usluga-vrata.html">Vrata & Rešetke</a></li>
+        <li><a href="usluga-bilbord.html">Bilbordi</a></li>
+      </ul>
+    </div>
+    <div class="f-col">
+      <div class="f-col-title">Kontakt</div>
+      <ul class="f-links">
+        <li><a href="tel:+381643456789">+381 64 345-6789</a></li>
+        <li><a href="https://www.instagram.com/profiartmetal/" target="_blank">@profiartmetal</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div>© 2025 Profi Art Metal. Sva prava zadržana.</div>
+    <div style="opacity:0.4;letter-spacing:2px;font-size:10px;">NIS · SRBIJA</div>
+  </div>
+</footer>
+
+</body>
+</html>
